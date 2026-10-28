@@ -10,10 +10,9 @@ Thay phần trong `[ngoặc vuông]` bằng mô tả của từng ảnh mẫu. V
 
 ```
 Tái tạo chính xác bức ảnh tham chiếu: cùng dáng người, cùng góc máy, cùng bố cục khung hình,
-cùng bối cảnh, cùng trang phục, cùng ánh sáng và tông màu.
+cùng bối cảnh, cùng ánh sáng và tông màu.
 
 Cảnh: [ví dụ: cô gái ngồi xổm trên vỉa hè phố đêm, đèn neon phía sau, mặt đường ướt phản chiếu ánh đèn]
-Trang phục: [ví dụ: áo khoác da màu đỏ, quần jean đen, bốt cao cổ]
 Dáng: [ví dụ: ngồi xổm, hai tay đặt trên gối, nghiêng đầu nhìn vào máy]
 Ánh sáng: [ví dụ: ánh đèn đường vàng ấm từ bên trái, viền sáng neon xanh phía sau]
 
@@ -22,19 +21,21 @@ Dáng: [ví dụ: ngồi xổm, hai tay đặt trên gối, nghiêng đầu nhì
 
 ---
 
-## Bước 2: Thay mặt thành Lara
+## Bước 2: Đưa Lara vào (mặt + trang phục)
 
-**Ảnh tham chiếu:** (1) ảnh tạo ở bước 1, (2) 1 ảnh mặt Lara rõ nét.
+**Ảnh tham chiếu:** (1) ảnh tạo ở bước 1, (2) ảnh Lara thấy rõ mặt và trang phục
+(thêm (3) ảnh mặt Lara nhìn thẳng nếu ảnh (2) không rõ mặt).
 
 ```
-GIỮ NGUYÊN 100% khuôn mặt của cô gái trong ảnh tham chiếu thứ hai (Lara): đúng dáng mặt,
-mắt, mũi, môi, lông mày, làn da, kiểu tóc và màu tóc. Khuôn mặt phải nhận ra ngay là Lara.
+GIỮ NGUYÊN 100% khuôn mặt và trang phục của cô gái trong ảnh tham chiếu thứ hai (Lara):
+đúng dáng mặt, mắt, mũi, môi, lông mày, làn da, kiểu tóc, màu tóc; đúng kiểu đồ, màu sắc,
+chất liệu, họa tiết và phụ kiện. Nhìn vào phải nhận ra ngay là Lara trong bộ đồ của cô ấy.
 
-Giữ nguyên mọi thứ khác của ảnh tham chiếu thứ nhất: dáng người, tư thế tay chân, góc máy,
-bố cục, bối cảnh, trang phục, phụ kiện, ánh sáng, tông màu và tỉ lệ khung hình.
-Chỉ thay khuôn mặt (và tóc) thành Lara, hướng mặt và biểu cảm theo ảnh thứ nhất.
+Giữ nguyên từ ảnh tham chiếu thứ nhất: dáng người, tư thế tay chân, góc máy, bố cục,
+bối cảnh, ánh sáng, tông màu và tỉ lệ khung hình. Hướng mặt và biểu cảm theo ảnh thứ nhất.
+Không dùng khuôn mặt và trang phục của người trong ảnh thứ nhất.
 
-Ánh sáng trên mặt khớp với ánh sáng của cảnh. Ảnh chụp thật, chân thực, độ nét cao,
+Ánh sáng trên người khớp với ánh sáng của cảnh. Ảnh chụp thật, chân thực, độ nét cao,
 không chữ, không logo.
 ```
 
@@ -44,7 +45,8 @@ không chữ, không logo.
 
 | Vấn đề | Thêm vào prompt |
 |---|---|
-| Mặt vẫn giống người mẫu cũ | `Không dùng khuôn mặt của ảnh thứ nhất. Khuôn mặt phải lấy hoàn toàn từ ảnh thứ hai.` |
-| Đồ hoặc nền bị đổi | `Không thay đổi trang phục, không thay đổi nền. Chỉ đổi khuôn mặt.` |
+| Mặt vẫn giống người mẫu cũ | `Khuôn mặt phải lấy hoàn toàn từ ảnh thứ hai, không giữ nét mặt của ảnh thứ nhất.` |
+| Vẫn mặc đồ của ảnh mẫu | `Thay toàn bộ trang phục bằng bộ đồ trong ảnh thứ hai, không giữ lại món đồ nào của ảnh thứ nhất.` |
+| Nền bị đổi | `Không thay đổi nền và bối cảnh của ảnh thứ nhất.` |
 | Dáng bị lệch | `Giữ đúng tư thế như ảnh thứ nhất, không xoay người, không đổi vị trí tay.` |
 | Ảnh trông giả, da nhựa | `Da có lỗ chân lông và kết cấu tự nhiên, ảnh như chụp bằng máy ảnh thật.` |

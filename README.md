@@ -1,6 +1,6 @@
 # Sub-agent tạo ảnh tự động
 
-Bộ hướng dẫn (skill) để Claude tự lên **Google Flow** tạo ảnh cho model AI **Lara** giống y ảnh mẫu: cùng dáng, bối cảnh, trang phục, ánh sáng, chỉ khuôn mặt là Lara.
+Bộ hướng dẫn (skill) để Claude tự lên **Google Flow** tạo ảnh cho model AI **Lara** giống y ảnh mẫu: cùng dáng, góc máy, bối cảnh, ánh sáng, còn khuôn mặt và trang phục là của Lara.
 
 Kho này không chứa code chạy được, mà là **skill + prompt** để Claude làm theo bằng trình duyệt. Kho không chứa ảnh nào (kho công khai).
 
@@ -9,15 +9,15 @@ Kho này không chứa code chạy được, mà là **skill + prompt** để Cl
 ```
 Ảnh mẫu ──► Bước 1: dựng lại cảnh theo mẫu ──► Ảnh cảnh
                                                   │
-Ảnh mặt Lara ─────────────────────────────────────┤
+Ảnh Lara (mặt+đồ) ─────────────────────────────────┤
                                                   ▼
-                                   Bước 2: thay mặt thành Lara ──► Ảnh kết quả
+                                   Bước 2: đưa Lara vào ──► Ảnh kết quả
 ```
 
-1. **Bước 1, dựng cảnh:** đưa ảnh mẫu vào Flow làm tham chiếu, tạo lại ảnh giữ nguyên dáng, nền, trang phục và ánh sáng.
-2. **Bước 2, thay mặt:** đưa ảnh bước 1 + ảnh mặt Lara vào Flow, dùng prompt bắt đầu bằng *"GIỮ NGUYÊN 100% khuôn mặt..."* để chỉ thay mặt, giữ mọi thứ khác.
+1. **Bước 1, dựng cảnh:** đưa ảnh mẫu vào Flow làm tham chiếu, tạo lại ảnh giữ nguyên dáng, góc máy, nền và ánh sáng.
+2. **Bước 2, đưa Lara vào:** đưa ảnh bước 1 + ảnh Lara vào Flow, dùng prompt bắt đầu bằng *"GIỮ NGUYÊN 100% khuôn mặt và trang phục..."* để thay mặt và đồ thành của Lara, giữ dáng, nền, ánh sáng.
 
-Làm gộp 1 bước thì Flow hay giữ luôn mặt người mẫu cũ, nên tách 2 bước cho mặt giống Lara hơn.
+Làm gộp 1 bước thì Flow hay giữ luôn mặt và đồ của người mẫu cũ, nên tách 2 bước cho giống Lara hơn.
 
 ## Cấu trúc kho
 
@@ -32,7 +32,7 @@ skills/tao-anh-model-theo-mau-flow/
 | Thư mục | Nội dung |
 |---|---|
 | `Downloads\LARa Model\ảnh mẫu` | Ảnh mẫu cần bắt chước |
-| `Downloads\LARa Model\Lara` | Ảnh mặt / chân dung Lara |
+| `Downloads\LARa Model\Lara` | Ảnh Lara: mặt và trang phục |
 | `Downloads\LARa Model\Flow kết quả` | Ảnh kết quả tải từ Flow về |
 
 Cần thêm: Chrome đã đăng nhập tài khoản Google dùng Flow và bật tiện ích Claude in Chrome.
@@ -46,5 +46,5 @@ Cần thêm: Chrome đã đăng nhập tài khoản Google dùng Flow và bật 
 
 ## Mặc định
 
-- Trang phục theo ảnh mẫu, chỉ thay mặt thành Lara.
+- Lara mặc đồ của chính cô ấy; từ ảnh mẫu chỉ lấy dáng, góc máy, bối cảnh, ánh sáng.
 - Luôn thử 1 ảnh, chờ duyệt rồi mới chạy cả bộ.

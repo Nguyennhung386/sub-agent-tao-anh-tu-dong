@@ -1,50 +1,50 @@
 ---
 name: tao-anh-model-theo-mau-flow
-description: Tạo ảnh model AI (Lara) giống ảnh mẫu trên Google Flow theo 2 bước, dựng cảnh theo mẫu rồi thay mặt thành Lara. Dùng khi nói 'tạo ảnh Lara theo mẫu', 'làm ảnh giống ảnh mẫu trên Flow'.
+description: Tạo ảnh model AI (Lara) giống ảnh mẫu trên Google Flow theo 2 bước, dựng cảnh theo mẫu rồi đưa Lara (mặt và trang phục của cô ấy) vào. Dùng khi nói 'tạo ảnh Lara theo mẫu', 'làm ảnh giống ảnh mẫu trên Flow'.
 ---
 
 # Tạo ảnh model theo ảnh mẫu trên Google Flow
 
-Mục tiêu: với mỗi ảnh mẫu, tạo một ảnh mới có **cùng dáng, bối cảnh, trang phục và ánh sáng** như ảnh mẫu, nhưng **khuôn mặt là Lara**.
+Mục tiêu: với mỗi ảnh mẫu, tạo một ảnh mới có **cùng dáng, góc máy, bối cảnh và ánh sáng** như ảnh mẫu, còn **khuôn mặt và trang phục là của Lara**.
 
 ## Đầu vào
 
 | Thư mục (trên máy Windows của người dùng) | Nội dung |
 |---|---|
 | `Downloads\LARa Model\ảnh mẫu` | Ảnh mẫu cần bắt chước (khoảng 55 ảnh) |
-| `Downloads\LARa Model\Lara` | Ảnh khuôn mặt / chân dung của Lara |
+| `Downloads\LARa Model\Lara` | Ảnh của Lara: mặt và trang phục |
 | `Downloads\LARa Model\Flow kết quả` | Nơi lưu ảnh kết quả (tạo mới nếu chưa có) |
 
 Công cụ: Google Flow (https://labs.google/flow), model ảnh Nano Banana, mở trong Chrome đã đăng nhập tài khoản Google của người dùng.
 
 ## Quy tắc mặc định
 
-- **Trang phục lấy theo ảnh mẫu.** Chỉ thay khuôn mặt thành Lara. Nếu người dùng muốn Lara giữ đồ của chính cô ấy thì phải được nói rõ.
-- Giữ nguyên dáng người, góc máy, bố cục, nền, ánh sáng, màu sắc của ảnh mẫu.
-- Mỗi lần chỉ dùng **1 ảnh mặt Lara rõ nét, nhìn thẳng** làm tham chiếu khuôn mặt. Chọn ảnh Lara có góc mặt gần với ảnh mẫu nhất nếu có.
+- **Lara mặc đồ của chính cô ấy**, lấy từ ảnh trong thư mục `Lara`. Không lấy trang phục của ảnh mẫu.
+- Từ ảnh mẫu chỉ lấy: dáng người, góc máy, bố cục, bối cảnh, ánh sáng, tông màu.
+- Mỗi lần dùng **1 ảnh Lara** thấy rõ mặt và trang phục (ưu tiên ảnh nửa người hoặc toàn thân). Chọn ảnh có góc mặt và kiểu khung hình gần ảnh mẫu nhất. Nếu ảnh có trang phục không thấy rõ mặt, thêm 1 ảnh mặt Lara nhìn thẳng.
 
 ## Quy trình 2 bước cho mỗi ảnh mẫu
 
-Làm 1 bước một lần thì Flow hay giữ luôn mặt người mẫu cũ. Tách thành 2 bước cho kết quả ổn định hơn.
+Làm 1 bước một lần thì Flow hay giữ luôn mặt và đồ của người mẫu cũ. Tách thành 2 bước cho kết quả ổn định hơn.
 
 ### Bước 1: Dựng cảnh theo ảnh mẫu
 
 1. Tạo ảnh mới trên Flow, thêm **ảnh mẫu** làm ảnh tham chiếu (ingredient).
-2. Dán prompt **Bước 1** trong [`prompts.md`](prompts.md), điền phần mô tả cảnh.
+2. Dán prompt **Bước 1** trong [`prompts.md`](prompts.md), điền phần mô tả cảnh, dáng và ánh sáng.
 3. Chọn đúng tỉ lệ khung hình giống ảnh mẫu (dọc 9:16 / 3:4, ngang 16:9...).
-4. Tạo ảnh, chọn ảnh giống mẫu nhất về dáng, nền, đồ, ánh sáng.
+4. Tạo ảnh, chọn ảnh giống mẫu nhất về dáng, nền, ánh sáng.
 
-### Bước 2: Thay mặt thành Lara
+### Bước 2: Đưa Lara vào (mặt + trang phục)
 
-1. Tạo ảnh mới, thêm **2 ảnh tham chiếu**: ảnh vừa tạo ở bước 1 và 1 ảnh mặt Lara.
-2. Dán prompt **Bước 2** trong [`prompts.md`](prompts.md). Prompt luôn mở đầu bằng *"GIỮ NGUYÊN 100% khuôn mặt..."* của Lara và yêu cầu giữ nguyên mọi thứ khác của ảnh bước 1.
-3. So sánh với ảnh mặt Lara. Nếu mặt chưa giống, tạo lại hoặc đổi sang ảnh mặt Lara khác góc hơn.
+1. Tạo ảnh mới, thêm ảnh tham chiếu: ảnh vừa tạo ở bước 1 và ảnh Lara (thêm ảnh mặt Lara nếu cần).
+2. Dán prompt **Bước 2** trong [`prompts.md`](prompts.md). Prompt luôn mở đầu bằng *"GIỮ NGUYÊN 100% khuôn mặt và trang phục..."* của Lara và yêu cầu giữ nguyên dáng, nền, ánh sáng của ảnh bước 1.
+3. So sánh với ảnh Lara. Nếu mặt hoặc đồ chưa giống, tạo lại hoặc đổi sang ảnh Lara khác.
 
 ## Thử trước, làm hàng loạt sau
 
 1. Làm **1 ảnh thử** trọn 2 bước.
-2. Ghép ảnh so sánh (ảnh mẫu, ảnh bước 1, ảnh bước 2, ảnh mặt Lara) gửi người dùng duyệt.
-3. Hỏi rõ: mặt đã đủ giống Lara chưa, trang phục theo mẫu hay theo Lara, có được tải ảnh về máy không.
+2. Ghép ảnh so sánh (ảnh mẫu, ảnh bước 1, ảnh bước 2, ảnh Lara) gửi người dùng duyệt.
+3. Hỏi rõ: mặt và đồ đã đủ giống Lara chưa, có được tải ảnh về máy không.
 4. Chỉ khi người dùng đồng ý mới làm các ảnh mẫu còn lại.
 
 ## Tải ảnh về
