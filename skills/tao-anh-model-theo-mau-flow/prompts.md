@@ -41,6 +41,16 @@ không chữ, không logo.
 
 ---
 
+## Câu tăng độ nét (thêm vào cuối prompt Bước 2)
+
+```
+Ảnh độ phân giải cao, siêu sắc nét, lấy nét chuẩn vào mắt, thấy rõ từng sợi tóc, lỗ chân lông
+và chi tiết vải. Không mờ, không nhiễu, không bệt màu. Chất lượng như chụp bằng máy ảnh full-frame,
+ống kính 85mm.
+```
+
+---
+
 ## Khi kết quả chưa đạt
 
 | Vấn đề | Thêm vào prompt |
@@ -49,4 +59,5 @@ không chữ, không logo.
 | Vẫn mặc đồ của ảnh mẫu | `Thay toàn bộ trang phục bằng bộ đồ trong ảnh thứ hai, không giữ lại món đồ nào của ảnh thứ nhất.` |
 | Nền bị đổi | `Không thay đổi nền và bối cảnh của ảnh thứ nhất.` |
 | Dáng bị lệch | `Giữ đúng tư thế như ảnh thứ nhất, không xoay người, không đổi vị trí tay.` |
+| Ảnh bị mờ, thiếu chi tiết | `Siêu sắc nét, lấy nét chuẩn vào mắt, chi tiết tóc và vải rõ ràng.` |
 | Ảnh trông giả, da nhựa | `Da có lỗ chân lông và kết cấu tự nhiên, ảnh như chụp bằng máy ảnh thật.` |

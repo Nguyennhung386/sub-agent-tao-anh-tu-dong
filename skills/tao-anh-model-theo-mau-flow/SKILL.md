@@ -47,6 +47,13 @@ Làm 1 bước một lần thì Flow hay giữ luôn mặt và đồ của ngư�
 3. Hỏi rõ: mặt và đồ đã đủ giống Lara chưa, có được tải ảnh về máy không.
 4. Chỉ khi người dùng đồng ý mới làm các ảnh mẫu còn lại.
 
+## Để ảnh sắc nét
+
+- Dùng ảnh tham chiếu (ảnh mẫu, ảnh Lara) gốc, độ phân giải cao, không mờ, không ảnh chụp màn hình.
+- Thêm câu tăng độ nét trong [`prompts.md`](prompts.md) vào cuối prompt Bước 2.
+- Khi tải, chọn **mức phân giải cao nhất** mà menu Tải xuống của Flow cho phép (bản phóng to 2K/4K nếu có).
+- Nếu ảnh vẫn chưa đủ nét, phóng to thêm bằng công cụ upscale riêng, không chỉnh lại khuôn mặt.
+
 ## Tải ảnh về
 
 - Tải bằng **nút Tải xuống (Download) của Flow** để lấy ảnh đầy đủ chất lượng. Không chụp màn hình, không lưu ảnh xem trước.
